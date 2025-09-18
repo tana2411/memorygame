@@ -1,0 +1,36 @@
+.card {
+  img {
+    width: 100%;
+  }
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+.card.flip .front {
+  transform: rotateY(180deg);
+}
+.card.flip .back {
+  transform: rotateY(0deg);
+}
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.front {
+  background: #444;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+}
+.back {
+  transform: rotateY(180deg);
+}

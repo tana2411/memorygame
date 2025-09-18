@@ -1,0 +1,24 @@
+<h1>Memory game</h1>
+<div class="gamePlay" *ngIf="!isPlaying">
+  <button (click)="isGameStarted()">Play</button>
+</div>
+
+<div class="result" [ngStyle]="{ display: isVisible ? 'flex' : 'none' }">
+  <div class="content">
+    <h3>{{ result }}</h3>
+
+    <button (click)="nextLevel()">{{ resultBtn }}</button>
+  </div>
+</div>
+
+<div *ngIf="isPlaying" class="timer">
+  Time: <span>{{ timeLeft }}</span> seconds
+</div>
+<div *ngIf="isPlaying" class="score">
+  <p>Score: {{ currentScore }}</p>
+</div>
+<div class="game-board">
+  <div *ngFor="let card of cards">
+    <app-card [card]="card" (cardClicked)="onCardClick(card)"></app-card>
+  </div>
+</div>

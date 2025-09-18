@@ -1,0 +1,5 @@
+<div class="card" [class.flip]="card.flipped || card.matched" (click)="onClick()">
+  <div class="front">?</div>
+  <div class="back">
+<img [src]="card.image" alt="card" />  </div>
+</div>
