@@ -1,4 +1,3 @@
-/* Tiêu đề */
 h1 {
   text-align: center;
   font-size: 2.5rem;
@@ -7,7 +6,6 @@ h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Khu vực gameplay */
 .gamePlay {
   display: flex;
   justify-content: center;
@@ -30,7 +28,6 @@ h1 {
   background: linear-gradient(135deg, #43a047, #66bb6a);
 }
 
-/* Kết quả */
 .result {
   position: fixed;
   top: 0;
@@ -73,7 +70,6 @@ h1 {
   background: linear-gradient(135deg, #1976d2, #42a5f5);
 }
 
-/* Timer và Score */
 .timer,
 .score {
   text-align: center;
@@ -83,7 +79,6 @@ h1 {
   font-weight: bold;
 }
 
-/* Bảng game */
 .game-board {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));

@@ -68,7 +68,12 @@ export class BoardComponent {
 
   shuffleCards(): void {
     const base = Array.from({ length: this.totalPairs }, (_, i) => i + 1);
-    let arr = base.concat(base).sort(() => Math.random() - 0.5);
+    let arr = base.concat(base);
+
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
     this.cards = arr.map((num, index) => ({
       id: index,
       image: `image/img-${num}.png`,
@@ -127,11 +132,14 @@ export class BoardComponent {
       this.totalPairs += 2;
       this.resultBtn = 'Next Level';
     } else {
+      this.totalPairs = 4;
+      localStorage.setItem('totalPairs', this.totalPairs.toString());
+
       this.gameService.reset();
       this.currentScore = this.gameService.getScore();
 
       this.result = ' Out of time';
-      this.totalPairs = 4;
+
       this.resultBtn = 'Retry';
     }
   }
